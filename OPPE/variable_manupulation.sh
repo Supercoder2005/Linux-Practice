@@ -13,3 +13,16 @@ echo ${#var}
 # the first parameter is for the starting index, the second is for the length
 echo ${var:0:4} # Extracts the first 3 characters
 echo ${var:4:3} # Extracts 3 characters starting from index 4
+
+# Prefix removal (greedy, and not greedy)
+var1=a/home/user/Documents/system-commands
+echo $var1
+
+# '.*' means -> Anything Any Number of times
+# '.+' means -> Anything Amy Number of time but Atleast once
+
+# non - greedy removal
+echo ${var1#*/} # Removes the shortest match of /* from the beginning
+echo ${var1#?*/} # Removes the shortest match of : remove any one letter followed by a /
+# greedy removal
+echo ${var1##*/} # Removes the longest match of /* from the beginning
