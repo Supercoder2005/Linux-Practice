@@ -25,4 +25,11 @@ echo $var1
 echo ${var1#*/} # Removes the shortest match of /* from the beginning
 echo ${var1#?*/} # Removes the shortest match of : remove any one letter followed by a /
 # greedy removal
-echo ${var1##*/} # Removes the longest match of /* from the beginning
+echo ${var1##*/} # Removes the longest match of /* from the beginning 
+
+
+# Suffix removal
+# non-greedy removal
+echo ${var1%/*} # Remove / and then any character after the / shortest one 
+# greedy removal
+echo ${var1%%/*} # Remove / and then any character after the / but the longest one 
