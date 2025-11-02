@@ -10,12 +10,12 @@ int main(){
     scanf("%d",&n);
     int pid[n],at[n],bt[n],ct[n],wt[n],tat[n],rt[n];
 
-    for(int i=0;i<n;i++){
+    for(i=0;i<n;i++){
         pid[i] = i+1;
         printf("\n Enter arrival time of process %d :",pid[i]);
         scanf("%d",&at[i]);
     }
-    for(int i=0;i<n;i++){
+    for(i=0;i<n;i++){
         printf("\n Enter burst time of process %d :",pid[i]);
         scanf("%d",&bt[i]);
         // initialize the remaining time of processes as their burst time
@@ -25,8 +25,10 @@ int main(){
     
     // sort the processes according to their remianing time 
     for(time = 0 ; count < n ; time++){
+
         int smallest = -1; // smallest means index of the process with the shortest rt at the current time 
         int min = INT_MAX; // initialize the min remaining time to a very large number
+
         // find the process with the shortest remaining time among the arrived processes
         for(i=0;i<n;i++){
             if(at[i]<=time && rt[i]>0 && rt[i]<min){
@@ -34,10 +36,12 @@ int main(){
                 smallest = i;
             }
         }
+
         // if no process is ready , cpu is in idle condition 
         if(smallest == -1){
             continue;
         }
+        
         // execute the process with shortest remining time for only 1 unit of time
         rt[smallest]--;
         // if the process is finished 
