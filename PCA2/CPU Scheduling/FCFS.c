@@ -56,7 +56,9 @@ int main(){
         sumTat += tat[i];
     }
 
-    printf("\n Average waiting time = %f",sumWt/n);
-    printf("\n Average waiting time = %f",sumTat/n);
+    float avgWt = sumWt/n;
+    float avgTat = sumTat/n;
+    printf("\n Average waiting time = %f",avgWt);
+    printf("\n Average waiting time = %f",avgTat);
 
 }
