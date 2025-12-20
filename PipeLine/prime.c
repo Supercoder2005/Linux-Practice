@@ -1,26 +1,14 @@
 #include<stdio.h>
 #include<unistd.h>
-#include<sys/types.h>
-#include<stdlib.h>
 
 int main(){
     int pd[2];
-    pid_t pid;
     int i,num;
     int count = 0;
     // create pipe 
-    if(pipe(pd) == -1){
-        printf("\n Pipe Failed");
-        exit(1);
-    }
-    
-    pid = fork();
-    if(pid<0){
-        printf("\n Fork Failed");
-        exit(1);
-    }
+    pipe(pd);
     // create child process (logic of prime number)
-    if(pid == 0){
+    if(fork() == 0){
         close(pd[1]); // close the write end 
         read(pd[0],&num,sizeof(num)); // read 
         // prime no logic
