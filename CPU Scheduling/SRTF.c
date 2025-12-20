@@ -7,8 +7,8 @@ int main(){
     int pid[n],at[n],bt[n],ct[n],tat[n],wt[n],rt[n];
     int count = 0; // keeps track of the no. of completed processes 
     int time = 0; // indicates the current time
-    int sumwt = 0;
-    int sumtat = 0;
+    float sumwt = 0;
+    float sumtat = 0;
     // taking input of arrival times 
     for(i=0;i<n;i++){
         pid[i] = i+1;
